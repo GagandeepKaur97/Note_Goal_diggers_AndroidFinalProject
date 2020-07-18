@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ada
+
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,categoryName);
         listView.setAdapter(adapter);
 
