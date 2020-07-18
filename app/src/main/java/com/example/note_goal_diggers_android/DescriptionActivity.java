@@ -107,9 +107,9 @@ public class DescriptionActivity extends AppCompatActivity {
 
         final EditText editTextTitle = findViewById(R.id.title_edit_text);
         final EditText editTextDesc = findViewById(R.id.description_edit_text);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Detail");
+//
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setTitle("Detail");
         //image capture
 
         imageButton = findViewById(R.id.chooseimagebtn);
