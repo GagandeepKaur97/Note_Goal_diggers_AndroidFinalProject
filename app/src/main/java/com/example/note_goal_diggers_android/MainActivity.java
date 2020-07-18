@@ -32,7 +32,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    Toolbar toolbar;
     ListView listView;
     public static ArrayList<String> categoryName;
     public static int catPosition;
@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
 //       ActionBar actionBar = getSupportActionBar();
 //       actionBar.setTitle("Categories");
 
-
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         listView = findViewById(R.id.category_list_view);
         addCategory = findViewById(R.id.btn_add_category);
         categoryName = new ArrayList<>();

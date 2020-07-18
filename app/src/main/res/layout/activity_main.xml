@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#44A1A0"
-        app:titleTextColor="#FFFCF9"/>
+        android:text="Categories"
+        app:titleTextColor="#FFFCF9" />
 
     <ListView
         android:layout_width="match_parent"
