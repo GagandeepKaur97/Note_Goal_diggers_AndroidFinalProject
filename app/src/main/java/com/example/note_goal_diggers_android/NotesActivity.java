@@ -89,8 +89,6 @@ public class NotesActivity extends AppCompatActivity {
                         IconAdapter iconAdapter1 = new IconAdapter(NotesActivity.this,filterList);
                         gridView.setAdapter(iconAdapter1);
 
-//                        ListViewAdaptor listViewAdaptor = new ListViewAdaptor(PhonebookActivity.this,R.layout.display_phonebook,searchedlist);
-//                        listView.setAdapter(listViewAdaptor);
                     }
 
                     if(newText.isEmpty()){
