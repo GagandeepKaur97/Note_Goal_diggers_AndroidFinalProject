@@ -179,13 +179,13 @@ public class NotesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_date:
-                loadsortedNotes(DataBaseHelper.COLUMN_DATE);
+                loadsortedNotes(SimpleDatabase.COLUMN_DATE);
                 IconAdapter iconAdapter1 = new IconAdapter(NotesActivity.this,CategoryModel.listNotes);
                 gridView.setAdapter(iconAdapter1);
 
                 break;
             case R.id.action_title:
-                loadsortedNotes(DataBaseHelper.COLUMN_TITLE);
+                loadsortedNotes(SimpleDatabase.COLUMN_TITLE);
                 IconAdapter iconAdapter = new IconAdapter(NotesActivity.this,CategoryModel.listNotes);
                 gridView.setAdapter(iconAdapter);
 
