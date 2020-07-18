@@ -50,8 +50,11 @@ import java.util.Date;
 
 public class DescriptionActivity extends AppCompatActivity {
     ImageButton imageButton;
-    ImageView imageView;
-    Uri imageUri;
+    //ImageView imageView;
+
+    ImageView uploadingimage;
+    public Uri imguri;
+    private boolean imagepresent = false;
     ImageButton startRec;
     ImageButton stopRec;
     ImageButton playRec, replayRec;
@@ -64,7 +67,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
     public static final int CAMERA_REQUEST = 1000;
     public static final int MY_CAMERA_PERMISSION_CODE = 1001;
-  SimpleDatabase dataBaseHelper;
+    SimpleDatabase dataBaseHelper;
 
     FusedLocationProviderClient fusedLocationProviderClient;
     LocationRequest locationRequest;
@@ -113,7 +116,8 @@ public class DescriptionActivity extends AppCompatActivity {
         //image capture
 
         imageButton = findViewById(R.id.chooseimagebtn);
-        imageView = findViewById(R.id.image_view);
+
+        uploadingimage = findViewById(R.id.image_view);
         startRec = findViewById(R.id.btn_start_record);
         stopRec = findViewById(R.id.btn_stop_record);
         playRec = findViewById(R.id.btn_play_record);
@@ -123,7 +127,7 @@ public class DescriptionActivity extends AppCompatActivity {
         Button buttonSave = findViewById(R.id.btn_save_note);
 
 
-        dataBaseHelper = new SimpleDatabase (this);
+        dataBaseHelper = new SimpleDatabase(this);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         buildLocationRequest();
@@ -166,37 +170,39 @@ public class DescriptionActivity extends AppCompatActivity {
             if (mCurrentPhotoPath != null) {
                 try {
                     mImageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(mCurrentPhotoPath));
-                    imageView.setImageBitmap(mImageBitmap);
+                    uploadingimage.setImageBitmap(mImageBitmap);
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-
-
         }
 
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            imageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Filechooser();
 
-                titleName = editTextTitle.getText().toString();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-                    if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                            == PackageManager.PERMISSION_DENIED) {
-                        String[] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                        requestPermissions(permission, CAMERA_REQUEST);
-
-                    } else {
-                        openCamera();
-                    }
-                } else {
-                    openCamera();
                 }
-            }
-        });
+            });
+
+//                titleName = editTextTitle.getText().toString();
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//
+//                    if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//                            == PackageManager.PERMISSION_DENIED) {
+//                        String[] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//                        requestPermissions(permission, CAMERA_REQUEST);
+//
+//                    } else {
+//                        openCamera();
+//                    }
+//                } else {
+//                    openCamera();
+//
+
+
 
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -331,6 +337,15 @@ public class DescriptionActivity extends AppCompatActivity {
 
     }
 
+
+    private void Filechooser () {
+        Intent intent = new Intent();
+        intent.setType("image/");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, 1);
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -370,8 +385,6 @@ public class DescriptionActivity extends AppCompatActivity {
 
             }
         }
-
-
 
 
     }
@@ -454,27 +467,19 @@ public class DescriptionActivity extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("MissingSuperCall")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (resultCode == RESULT_OK) {
-//            imageView.setImageURI(imageUri);
-//
-//            String str = imageUri.getPath();
-//            System.out.println("path:" + imageUri.getPath() + ".jpeg");
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode ==1 && resultCode ==RESULT_OK && data!= null && data.getData() != null){
 
-            try {
-                mImageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.parse(mCurrentPhotoPath));
-                imageView.setImageBitmap(mImageBitmap);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            imguri = data.getData();
+            uploadingimage.setImageURI(imguri);
+            imagepresent = true;
 
 
         }
-
     }
+
 
     private void buildLocationRequest() {
         locationRequest = new LocationRequest();
@@ -555,10 +560,9 @@ public class DescriptionActivity extends AppCompatActivity {
         mediaRecorder.setOutputFile(audiofilepath);
 
 
-
     }
 
 
-
-
 }
+
+
