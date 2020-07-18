@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Categories");
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setTitle("Categories");
 
 
         listView = findViewById(R.id.category_list_view);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,categoryName);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, categoryName);
         listView.setAdapter(adapter);
 
 
