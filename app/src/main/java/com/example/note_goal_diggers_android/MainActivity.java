@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setTitle("Categories");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Categories");
 
 
         listView = findViewById(R.id.category_list_view);
