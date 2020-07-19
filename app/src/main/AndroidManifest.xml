@@ -24,16 +24,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".splashScreenActivity"></activity>
+
         <activity android:name=".DescriptionActivity" />
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".NotesActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
             <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyCtyQQm0w-eVhwfDKisu5rrZD-ADGzZWH4" />
+        <activity android:name=".splashScreenActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
