@@ -21,11 +21,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="NotesApp"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme"
         android:supportsRtl="true"
+        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".DescriptionActivity"></activity>
-
+        <activity android:name=".splashScreenActivity"></activity>
+        <activity android:name=".DescriptionActivity" />
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
@@ -42,8 +42,5 @@
             </intent-filter>
         </activity>
     </application>
-
-
-
 
 </manifest>
