@@ -8,7 +8,12 @@
     android:padding="5dp"
     tools:context=".NotesActivity">
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#44A1A0"
+        app:titleTextColor="#FFFCF9"/>
 
     <SearchView
         android:layout_width="match_parent"

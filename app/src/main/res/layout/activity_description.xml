@@ -9,20 +9,28 @@
     tools:context=".DescriptionActivity">
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/title_edit_text"
-        android:layout_marginTop="5dp"
-        android:hint="title"/>
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?actionBarSize"-->
+<!--        android:background="#44A1A0"-->
+<!--        app:titleTextColor="#FFFCF9" />-->
+
 
     <EditText
-        android:layout_below="@+id/title_edit_text"
+        android:id="@+id/title_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:hint="description"
-        android:id="@+id/description_edit_text"/>
+        android:layout_marginTop="20dp"
+        android:hint="title" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_edit_text"
+        android:layout_marginTop="14dp"
+        android:hint="description" />
 
     <ImageButton
         android:layout_below="@+id/description_edit_text"

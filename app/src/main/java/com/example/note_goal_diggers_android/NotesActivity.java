@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,7 +28,7 @@ import java.util.List;
 public class NotesActivity extends AppCompatActivity {
  ListView listView ;
 
-
+    Toolbar toolbar;
     FloatingActionButton floatingActionButton;
    SimpleDatabase dataBaseHelper;
     String audioPath;
@@ -47,7 +48,8 @@ public class NotesActivity extends AppCompatActivity {
 //       actionBar.setTitle("Notes");
 
         listView = findViewById(R.id.notes_list_view);
-
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         floatingActionButton = findViewById(R.id.floatingActionButton);
 

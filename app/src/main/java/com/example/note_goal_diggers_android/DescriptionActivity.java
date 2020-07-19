@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
@@ -51,7 +52,7 @@ import java.util.Date;
 public class DescriptionActivity extends AppCompatActivity {
     ImageButton imageButton;
     //ImageView imageView;
-
+    Toolbar toolbar;
     ImageView uploadingimage;
     public Uri imguri;
     private boolean imagepresent = false;
@@ -116,7 +117,8 @@ public class DescriptionActivity extends AppCompatActivity {
         //image capture
 
         imageButton = findViewById(R.id.chooseimagebtn);
-
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         uploadingimage = findViewById(R.id.image_view);
         startRec = findViewById(R.id.btn_start_record);
         stopRec = findViewById(R.id.btn_stop_record);
