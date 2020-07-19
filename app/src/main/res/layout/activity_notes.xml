@@ -17,22 +17,28 @@
         />
 
 
-    <GridView
-        android:id="@+id/gridView"
-        style="@android:style/Widget.Holo.Light.GridView"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/notes_list_view"
         android:layout_weight="1"
-        android:clipChildren="true"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+<!--        android:id="@+id/gridView"-->
+<!--        style="@android:style/Widget.Holo.Light.GridView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:clipChildren="true"-->
 
-        android:fadingEdge="horizontal"
-        android:gravity="center"
-        android:numColumns="2"
-        android:padding="5dp"
-        android:requiresFadingEdge="horizontal|vertical"
-        android:textFilterEnabled="false">
+<!--        android:fadingEdge="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        android:numColumns="2"-->
+<!--        android:padding="5dp"-->
+<!--        android:requiresFadingEdge="horizontal|vertical"-->
+<!--        android:textFilterEnabled="false">-->
 
-    </GridView>
+<!--    </>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

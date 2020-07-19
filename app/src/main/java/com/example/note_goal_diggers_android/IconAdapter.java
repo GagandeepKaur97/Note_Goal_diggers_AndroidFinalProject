@@ -50,10 +50,10 @@ public class IconAdapter extends BaseAdapter {
 
 
 
-        TextView title = convertView.findViewById(R.id.tv_title);
+        TextView title = convertView.findViewById(R.id.subjectTitle);
 
-        TextView date = convertView.findViewById(R.id.tv_date);
-        ImageView image = convertView.findViewById(R.id.image_note);
+        TextView date = convertView.findViewById(R.id.ndate);
+        ImageView image = convertView.findViewById(R.id.imgEmp);
 
 
         title.setText(categoryModelList.get(position).getTitle());
