@@ -33,7 +33,7 @@
         <activity android:name=".MainActivity"/>
             <meta-data
                 android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyCtyQQm0w-eVhwfDKisu5rrZD-ADGzZWH4" />
+                android:value="AIzaSyBhD-78G37m64NdPJDNUI8LDrxcNCNT1Mo" />
         <activity android:name=".splashScreenActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -45,6 +45,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBhD-78G37m64NdPJDNUI8LDrxcNCNT1Mo" />
+
+        <provider
+            android:authorities="com.delaroystudios.imagecamerabitmap"
+            android:name=".ImageProvider"
+            android:exported="false"/>
+
+        <provider
+            android:authorities="${applicationId}.provider"
+            android:name=".GenericFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+
+        </provider>
+
     </application>
 
 </manifest>

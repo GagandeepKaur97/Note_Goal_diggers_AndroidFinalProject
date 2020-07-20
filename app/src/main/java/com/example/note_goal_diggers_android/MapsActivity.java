@@ -66,8 +66,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Location");
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setTitle("Location");
         initMap();
         getUserLocation();
 

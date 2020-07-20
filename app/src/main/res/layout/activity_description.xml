@@ -9,20 +9,25 @@
     tools:context=".DescriptionActivity">
 
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?actionBarSize"-->
-<!--        android:background="#44A1A0"-->
-<!--        app:titleTextColor="#FFFCF9" />-->
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_d"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#44A1A0"
+        app:titleTextColor="#FFFCF9" />
 
 
     <EditText
         android:id="@+id/title_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_d"
         android:layout_marginTop="20dp"
-        android:hint="title" />
+        android:hint="title"
+        tools:ignore="UnknownId" />
 
     <EditText
         android:id="@+id/description_edit_text"

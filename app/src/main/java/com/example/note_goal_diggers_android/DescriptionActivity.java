@@ -111,14 +111,17 @@ public class DescriptionActivity extends AppCompatActivity {
 
         final EditText editTextTitle = findViewById(R.id.title_edit_text);
         final EditText editTextDesc = findViewById(R.id.description_edit_text);
+
+
 //
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setTitle("Detail");
         //image capture
 
         imageButton = findViewById(R.id.chooseimagebtn);
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar_d);
         setSupportActionBar(toolbar);
+//        toolbar.setTitle("Note Details");
         uploadingimage = findViewById(R.id.image_view);
         startRec = findViewById(R.id.btn_start_record);
         stopRec = findViewById(R.id.btn_stop_record);
@@ -359,6 +362,7 @@ public class DescriptionActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.btn_location:
+                System.out.println("//////////////////inside location/////////////////");
                 Intent intent = new Intent(DescriptionActivity.this, MapsActivity.class);
                 intent.putExtra("latitude", latitude);
                 intent.putExtra("longitude", longitude);
